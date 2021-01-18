@@ -9,7 +9,7 @@ inputs:
     description: 'The repository token that is used to request data from Github API. Pass in secrets.GITHUB_TOKEN'
     required: true
   version-filepath:
-    description: 'Path of the file that contains project version'
+    description: 'Path of the file that contains project version. A JSON version file with a top-level property "version" is assumed'
     required: false
     default: 'package.json'
   skip-label:
