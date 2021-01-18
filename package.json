@@ -1,9 +1,10 @@
 {
   "name": "github-actions-version-check",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "GitHub Action that checks if the project version has been updated in a pull request",
+  "main": "dist/index.js",
   "scripts": {
+    "package": "ncc build src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/clicktherapeutics/github-actions-version-check/issues"
   },
-  "homepage": "https://github.com/clicktherapeutics/github-actions-version-check#readme"
+  "homepage": "https://github.com/clicktherapeutics/github-actions-version-check#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0",
+    "semver-diff": "^3.1.1"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.27.0"
+  }
 }
