@@ -1,0 +1,24 @@
+name: 'PR version update enforcer'
+description: 'Enforce version update on pull requests'
+author: 'adgao'
+branding:
+  icon: 'chevron-up'
+  color: 'purple'
+inputs:
+  github-token:
+    description: 'The repository token that is used to request data from Github API. Pass in secrets.GITHUB_TOKEN'
+    required: true
+  version-filepath:
+    description: 'Path of the file that contains project version. A JSON version file with a top-level property "version" is assumed'
+    required: false
+    default: 'package.json'
+  skip-label:
+    description: 'Name of the PR label that is used to skip the version check'
+    required: false
+    default: 'skip-versioning'
+outputs:
+  version:
+    description: If the version update is valid then the new version is returned
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
